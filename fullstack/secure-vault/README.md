@@ -6,7 +6,7 @@ A modern, high-performance file explorer UI built for SecureVault Inc., designed
 https://amali-tech-deg-project-based-challe-lac.vercel.app/
 
 ## Design File
-https://www.figma.com/design/NzObrV5n9DthH69MwxL40z/Amalitech-Secret-Vault?node-id=0-1
+https://www.figma.com/design/NzObrV5n9DthH69MwxL40z/Amalitech-Secret-Vault?node-id=0-1&t=ZYHoyzxibGwyrRuN-1
 
 
 ---
@@ -37,8 +37,8 @@ https://www.figma.com/design/NzObrV5n9DthH69MwxL40z/Amalitech-Secret-Vault?node-
 
 ---
 
-## Project Structure
-
+### Project Structure
+```
 src/
 ├── assets/
 ├── Components/
@@ -52,7 +52,7 @@ src/
 │   └── VaultContext.jsx  
 └── hooks/
     └── useKeyboardNav.js  
-
+```
 ---
 
 ## Recursive Strategy
