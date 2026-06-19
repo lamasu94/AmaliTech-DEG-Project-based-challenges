@@ -3,7 +3,7 @@
 A modern, high-performance file explorer UI built for SecureVault Inc., designed for law firms and banks to navigate deeply nested secure documents with ease.
 
 ## Live Demo
-
+https://amali-tech-deg-project-based-challe-lac.vercel.app/
 
 ## Design File
 https://www.figma.com/design/NzObrV5n9DthH69MwxL40z/Amalitech-Secret-Vault?node-id=0-1
@@ -42,16 +42,16 @@ https://www.figma.com/design/NzObrV5n9DthH69MwxL40z/Amalitech-Secret-Vault?node-
 src/
 ├── assets/
 ├── Components/
-│   ├── SideBar.jsx         # Recursive folder tree
-│   ├── Navbar.jsx          # Top bar with search
-│   ├── Filetable.jsx       # Main file listing table
-│   └── Propertiespanel.jsx # Right side file details
+│   ├── SideBar.jsx         
+│   ├── Navbar.jsx          
+│   ├── Filetable.jsx       
+│   └── Propertiespanel.jsx 
 ├── Pages/
-│   └── Dashboard.jsx       # Composes all components
+│   └── Dashboard.jsx      
 ├── context/
-│   └── VaultContext.jsx    # Global state management
+│   └── VaultContext.jsx  
 └── hooks/
-    └── useKeyboardNav.js   # Keyboard navigation hook
+    └── useKeyboardNav.js  
 
 ---
 
