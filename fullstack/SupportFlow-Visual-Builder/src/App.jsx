@@ -18,9 +18,16 @@ export default function App() {
   } = useFlowData()
 
   const [mode, setMode] = useState('editor')
+  const [searchQuery, setSearchQuery] = useState('')
 
   function toggleMode() {
     setMode(prev => (prev === 'editor' ? 'preview' : 'editor'))
+    deselectAll()
+    setSearchQuery('')
+  }
+
+  function handleSearch(query) {
+    setSearchQuery(query)
     deselectAll()
   }
 
@@ -39,6 +46,8 @@ export default function App() {
         onToggleMode={toggleMode}
         selectedNode={selectedNode}
         nodeCount={nodes.length}
+        searchQuery={searchQuery}
+        onSearch={handleSearch}
       />
 
       {/* Main area */}
@@ -55,9 +64,10 @@ export default function App() {
           onSelectNode={selectNode}
           onDragMove={updateNodePosition}
           onDeselectAll={deselectAll}
+          searchQuery={searchQuery}
         />
 
-        {/* Edit panel — only when a node is selected in editor mode */}
+        {/* Edit panel */}
         {selectedNode && mode === 'editor' && (
           <EditPanel
             node={selectedNode}
@@ -68,7 +78,7 @@ export default function App() {
         )}
       </div>
 
-      {/* Preview mode — full screen overlay */}
+      {/* Preview mode */}
       {mode === 'preview' && (
         <PreviewMode
           nodes={nodes}

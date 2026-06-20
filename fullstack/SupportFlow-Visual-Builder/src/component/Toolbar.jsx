@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Toolbar({ mode, onToggleMode, selectedNode, nodeCount }) {
+export default function Toolbar({ mode, onToggleMode, selectedNode, nodeCount, searchQuery, onSearch }) {
   const isPreview = mode === 'preview'
 
   return (
@@ -55,6 +55,59 @@ export default function Toolbar({ mode, onToggleMode, selectedNode, nodeCount })
           )}
         </div>
       </div>
+
+      {/* Center: search */}
+      {!isPreview && (
+        <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+          <span style={{
+            position: 'absolute',
+            left: 10,
+            fontSize: 12,
+            color: '#8BA4B5',
+            pointerEvents: 'none',
+          }}>
+            ⌕
+          </span>
+          <input
+            type="text"
+            placeholder="Search nodes..."
+            value={searchQuery}
+            onChange={e => onSearch(e.target.value)}
+            style={{
+              background: '#152533',
+              border: '1px solid #1E3F57',
+              borderRadius: 8,
+              padding: '6px 12px 6px 28px',
+              fontSize: 12,
+              color: '#E8EDF0',
+              outline: 'none',
+              width: 200,
+              fontFamily: 'Inter, sans-serif',
+              transition: 'border-color 0.15s',
+            }}
+            onFocus={e => e.target.style.borderColor = '#2872A1'}
+            onBlur={e => e.target.style.borderColor = '#1E3F57'}
+          />
+          {searchQuery && (
+            <button
+              onClick={() => onSearch('')}
+              style={{
+                position: 'absolute',
+                right: 8,
+                background: 'none',
+                border: 'none',
+                color: '#8BA4B5',
+                cursor: 'pointer',
+                fontSize: 14,
+                lineHeight: 1,
+                padding: 0,
+              }}
+            >
+              ×
+            </button>
+          )}
+        </div>
+      )}
 
       {/* Right: actions */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>

@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import Node from './Node'
 import Connections from './Connections'
 
-export default function Canvas({ nodes, selectedId, onSelectNode, onDragMove, onDeselectAll }) {
+export default function Canvas({ nodes, selectedId, onSelectNode, onDragMove, onDeselectAll, searchQuery }) {
   const canvasRef = useRef(null)
 
   function handleCanvasClick(e) {
@@ -31,7 +31,7 @@ export default function Canvas({ nodes, selectedId, onSelectNode, onDragMove, on
           backgroundSize: '40px 40px',
         }}
       >
-        {/* SVG connectors — behind nodes */}
+        {/* SVG connectors */}
         <Connections nodes={nodes} />
 
         {/* Node cards */}
@@ -42,6 +42,7 @@ export default function Canvas({ nodes, selectedId, onSelectNode, onDragMove, on
             isSelected={selectedId === node.id}
             onSelect={onSelectNode}
             onDragMove={onDragMove}
+            searchQuery={searchQuery}
           />
         ))}
       </div>
