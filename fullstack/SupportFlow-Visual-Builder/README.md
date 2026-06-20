@@ -3,7 +3,8 @@
 A visual decision tree editor for building and testing customer support chatbot flows. Built for the SupportFlow AI platform to replace error-prone spreadsheet-based bot configuration.
 
 ---
-
+## figma prototype
+https://www.figma.com/design/NzObrV5n9DthH69MwxL40z/Amalitech-Secret-Vault?node-id=23-71&t=MEyZpj8xdHfMhT0V-1
 ## Live Demo
 
 🔗 https://amali-tech-deg-project-based-challe-omega.vercel.app/ 
